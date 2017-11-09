@@ -57,4 +57,7 @@ public class FincaRaiz {
         inventario.remove(inventario.containsValue(local));
     }
     
+    public void consultarInventario(){
+        System.out.println(inventario.toString());
+    }
 }
