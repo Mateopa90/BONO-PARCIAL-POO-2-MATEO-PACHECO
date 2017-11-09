@@ -1,4 +1,4 @@
-package parcial_2;
+package Datos;
 
 public abstract class Inmueble {
     protected String nombreBarrio;

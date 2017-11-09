@@ -1,4 +1,4 @@
-package parcial_2;
+package Datos;
 
 public class LocalComercial extends Local{
     
@@ -22,5 +22,35 @@ public class LocalComercial extends Local{
                 "Descripción: " + this.descripcion;
         return info;
     } 
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setViaPrincipal(boolean viaPrincipal) {
+        this.viaPrincipal = viaPrincipal;
+    }
+
+    public void setNombreBarrio(String nombreBarrio) {
+        this.nombreBarrio = nombreBarrio;
+    }
+
+    public void setEstrato(int estrato) {
+        this.estrato = estrato;
+    }
+
+    public void setValorArriendo(double valorArriendo) {
+        this.valorArriendo = valorArriendo;
+    }
+
+    public void setAreaConstruida(double areaConstruida) {
+        this.areaConstruida = areaConstruida;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
+    
+    
 
 }    

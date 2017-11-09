@@ -1,4 +1,4 @@
-package parcial_2;
+package Datos;
 
 public class Persona {
     private String nombre;

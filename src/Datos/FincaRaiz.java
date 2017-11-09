@@ -1,4 +1,4 @@
-package parcial_2;
+package Datos;
 
 import java.util.ArrayList;
 import java.util.TreeMap;
@@ -36,5 +36,25 @@ public class FincaRaiz {
         inventario.put("Piso", p);
     }
     
+    public void agregarEdificio (String propietario, String nombreBarrio, int estrato, double valorArriendo, double areaConstruida, boolean disponible){
+        Edificio e = new Edificio(propietario, nombreBarrio, estrato, valorArriendo, areaConstruida, disponible);
+        inventario.put("Edificio", e);
+    }
+    
+    public void eliminarEdificio(Edificio edificio){
+        inventario.remove(inventario.containsValue(edificio));
+    }
+    
+    public void eliminarPiso(Piso piso){
+        inventario.remove(inventario.containsValue(piso));
+    }
+    
+    public void eliminarOficina(Oficina oficina){
+        inventario.remove(inventario.containsValue(oficina));
+    }
+    
+    public void eliminarLocal(LocalComercial local){
+        inventario.remove(inventario.containsValue(local));
+    }
     
 }

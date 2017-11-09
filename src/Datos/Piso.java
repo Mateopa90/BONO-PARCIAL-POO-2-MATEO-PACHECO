@@ -1,4 +1,4 @@
-package parcial_2;
+package Datos;
 
 import java.util.ArrayList;
 
@@ -30,6 +30,38 @@ public class Piso extends Inmueble {
                 "Número de Oficinas: " + this.numeroOficinas;
         return info;
     }     
+
+    public void setNumeroOficinas(int numeroOficinas) {
+        this.numeroOficinas = numeroOficinas;
+    }
+
+    public void setArea(double area) {
+        this.area = area;
+    }
+
+    public void setOficinas(ArrayList<Oficina> oficinas) {
+        this.oficinas = oficinas;
+    }
+
+    public void setNombreBarrio(String nombreBarrio) {
+        this.nombreBarrio = nombreBarrio;
+    }
+
+    public void setEstrato(int estrato) {
+        this.estrato = estrato;
+    }
+
+    public void setValorArriendo(double valorArriendo) {
+        this.valorArriendo = valorArriendo;
+    }
+
+    public void setAreaConstruida(double areaConstruida) {
+        this.areaConstruida = areaConstruida;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
     
     
     
