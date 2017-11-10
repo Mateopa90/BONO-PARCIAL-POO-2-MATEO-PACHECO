@@ -78,4 +78,3 @@ public class Persona {
     }
 }
 
-//String nombre, int documento, int edad, String sexo, boolean nomina, boolean avalBancario, boolean contratoTrabajo, boolean avalPersona
