@@ -42,6 +42,32 @@ public class Oficina extends Local {
     public void setDisponible(boolean disponible) {
         this.disponible = disponible;
     }
-    
-    
+
+    public String getTipoOficina() {
+        return tipoOficina;
+    }
+
+    public String getNombreBarrio() {
+        return nombreBarrio;
+    }
+
+    public int getEstrato() {
+        return estrato;
+    }
+
+    public double getValorArriendo() {
+        return valorArriendo;
+    }
+
+    public double getAreaConstruida() {
+        return areaConstruida;
+    }
+
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    public Persona getArrendatario() {
+        return arrendatario;
+    }
 }

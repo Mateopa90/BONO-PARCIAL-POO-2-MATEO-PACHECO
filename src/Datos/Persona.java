@@ -61,11 +61,7 @@ public class Persona {
         return aprobacion;
     }
     
-    public void eliminarPersona(){
-        
-    }
-    
-    public String consultarDatos(){
+    public void consultarDatos(){
          String info = "Nombre: " + this.nombre + "\n" + 
                 "Documento de Identidad: " + this.documento + "\n" + 
                 "Edad: " + this.edad + "\n" + 
@@ -74,7 +70,7 @@ public class Persona {
                 "La persona tiene aval bancario: " + this.avalBancario + "\n" + 
                 "La persona tiene un contrato de trabajo: " + this.contratoTrabajo + "\n" +
                 "La persona cuenta con el aval de una persona que cumple con todas las condiciones: " + this.avalPersona;
-        return info;
+        System.out.println(info);
     }
 }
 

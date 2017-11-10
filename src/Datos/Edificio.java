@@ -32,6 +32,48 @@ public class Edificio extends Inmueble {
         pisos.add(p);
     }
 
+    public String getPropietario() {
+        return propietario;
+    }
+
+    public ArrayList<Oficina> getOficinas() {
+        return oficinas;
+    }
+
+    public ArrayList<LocalComercial> getLocalesComerciales() {
+        return localesComerciales;
+    }
+
+    public ArrayList<Piso> getPisos() {
+        return pisos;
+    }
+
+    public String getNombreBarrio() {
+        return nombreBarrio;
+    }
+
+    public int getEstrato() {
+        return estrato;
+    }
+
+    public double getValorArriendo() {
+        return valorArriendo;
+    }
+
+    public double getAreaConstruida() {
+        return areaConstruida;
+    }
+
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    public Persona getArrendatario() {
+        return arrendatario;
+    }
+    
+    
+
     @Override
     public String darInformacion() {
         String info = "Nombre del Barrio: " + this.nombreBarrio + "\n"

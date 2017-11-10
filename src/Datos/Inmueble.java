@@ -27,5 +27,7 @@ public abstract class Inmueble {
         }
     }
     
-    
+    public void eliminarCliente(){
+        this.arrendatario = null;
+    }
 }
