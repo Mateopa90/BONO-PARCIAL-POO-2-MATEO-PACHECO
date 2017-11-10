@@ -17,7 +17,7 @@ public class Edificio extends Inmueble {
         this.pisos = new ArrayList<>();
     }   
 
-    public void agregarLocalesComerciales(String descripcion, boolean viaPrincipal, String nombreBarrio, int estrato, double valorArriendo, double areaConstruida, boolean disponible) {
+    public void agregarLocalesComerciales(String descripcion, boolean viaPrincipal, String nombreBarrio, int estrato, double valorArriendo, double areaConstruida, boolean disponible){
         LocalComercial l = new LocalComercial(descripcion, viaPrincipal, nombreBarrio, estrato, valorArriendo, areaConstruida, disponible);
         localesComerciales.add(l);
     }

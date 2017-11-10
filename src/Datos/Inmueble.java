@@ -6,6 +6,7 @@ public abstract class Inmueble {
     protected double valorArriendo;
     protected double areaConstruida;
     protected boolean disponible;
+    protected Persona arrendatario;
 
     public Inmueble(String nombreBarrio, int estrato, double valorArriendo, double areaConstruida, boolean disponible) {
         this.nombreBarrio = nombreBarrio;
@@ -16,4 +17,15 @@ public abstract class Inmueble {
     }
     
     public abstract String darInformacion();
+    
+    public void agregarCliente(Persona persona){
+        if(persona.evaluarPersona() == true){
+            this.arrendatario = persona;
+        } else {
+            System.out.println("Esta persona no cumple con los requisitos necesarios para "
+                    + "alquilar uno de los Inmuebles");
+        }
+    }
+    
+    
 }

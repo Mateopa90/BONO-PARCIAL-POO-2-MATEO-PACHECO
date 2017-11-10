@@ -60,4 +60,22 @@ public class Persona {
         }
         return aprobacion;
     }
+    
+    public void eliminarPersona(){
+        
+    }
+    
+    public String consultarDatos(){
+         String info = "Nombre: " + this.nombre + "\n" + 
+                "Documento de Identidad: " + this.documento + "\n" + 
+                "Edad: " + this.edad + "\n" + 
+                "Sexo: " + this.sexo + "\n" + 
+                "La persona tiene una nómina: " + this.nomina + "\n" + 
+                "La persona tiene aval bancario: " + this.avalBancario + "\n" + 
+                "La persona tiene un contrato de trabajo: " + this.contratoTrabajo + "\n" +
+                "La persona cuenta con el aval de una persona que cumple con todas las condiciones: " + this.avalPersona;
+        return info;
+    }
 }
+
+//String nombre, int documento, int edad, String sexo, boolean nomina, boolean avalBancario, boolean contratoTrabajo, boolean avalPersona
