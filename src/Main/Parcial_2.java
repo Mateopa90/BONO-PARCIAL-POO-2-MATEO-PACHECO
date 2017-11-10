@@ -17,7 +17,7 @@ public class Parcial_2 {
         Persona p = new Persona("Carlos", 1007392910, 23, "Hombre", true, false, false, false);
         Persona e = new Persona("Margsdas", 12312, 123, "ad", false, false, false, false);
         
-        m.consultarInventario();
+        //m.consultarInventario();
     }
     
 }
