@@ -52,6 +52,10 @@ public class Persona {
     public void setAvalPersona(boolean avalPersona) {
         this.avalPersona = avalPersona;
     }
+
+    public int getDocumento() {
+        return documento;
+    }
     
     public boolean evaluarPersona (){
         boolean aprobacion = false;

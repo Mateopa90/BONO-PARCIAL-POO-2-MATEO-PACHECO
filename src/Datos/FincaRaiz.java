@@ -9,6 +9,7 @@ public class FincaRaiz {
     private TreeMap<Integer, Oficina> inventarioOficinas;
     private TreeMap<Integer, Piso> inventarioPisos;
     private TreeMap<Integer, Edificio> inventarioEdificios;
+    private TreeMap<Integer, Persona> clientes;
     private int numLoc;
     private int numOfi;
     private int numPiso;
@@ -48,23 +49,27 @@ public class FincaRaiz {
         inventarioEdificios.put(this.numEdi, e);
         this.numEdi++;
     }
+    
+    public void agregarCliente(Persona persona){
+        clientes.put(persona.getDocumento(), persona);
+    }
 
-//    public void eliminarEdificio(String propietario, String nombreBarrio, int estrato, double valorArriendo, double areaConstruida, boolean disponible){
-//        Edificio edificio = new Edificio(propietario, nombreBarrio, estrato, valorArriendo, areaConstruida, disponible);
-//        inventario.remove(edificio);
-//    }
-//
-//    public void eliminarPiso(Piso piso) {
-//        inventario.remove(inventario.containsValue(piso));
-//    }
-//
-//    public void eliminarOficina(Oficina oficina) {
-//        inventario.remove(inventario.containsValue(oficina));
-//    }
-//
-//    public void eliminarLocal(LocalComercial local) {
-//        inventario.remove(inventario.containsValue(local));
-//    }
+    public void eliminarEdificio(int key) {
+        inventarioEdificios.remove(key);
+    }
+
+    public void eliminarPiso(int key) {
+        inventarioPisos.remove(key);
+    }
+
+    public void eliminarOficina(int key) {
+        inventarioOficinas.remove(key);
+    }
+
+    public void eliminarLocal(int key) {
+        inventarioLocales.remove(key);
+    }
+
     public void consultarInventarios() {
         System.out.println("Locales comerciales registrados: ");
         for (int i = 1; i <= inventarioLocales.size(); i++) {
