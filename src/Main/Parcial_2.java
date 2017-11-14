@@ -1,33 +1,32 @@
 package Main;
 
-import Datos.FincaRaiz;
+import Datos.Finca_Raiz;
 import Datos.Persona;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Parcial_2 {
 
     public static void main(String[] args) {
-        FincaRaiz f = new FincaRaiz();
+        Finca_Raiz f = new Finca_Raiz();
 
         while (true) {
-            System.out.println("¡Bienvenido a su empresa de Finca Raíz!");
-            System.out.println("Elija la actividad que desea desarrollar");
+            System.out.println("*******Bienvenido a su empresa de Finca Raíz********");
+            System.out.println("***** Elija la actividad que desea desarrollar *****");
 
-            System.out.println("1. Agregar un local comercial");
-            System.out.println("2. Agregar una oficina");
-            System.out.println("3. Agregar un piso");
-            System.out.println("4. Agregar un edificio");
-            System.out.println("5. Eliminar un local comercial");
-            System.out.println("6. Eliminar una oficina");
-            System.out.println("7. Eliminar un piso");
-            System.out.println("8. Eliminar un edificio");
-            System.out.println("9. Mostrar el inventario de inmuebles");
-            System.out.println("10. Agregar una persona");
-            System.out.println("11. Vincular a una persona con un inmueble");
-            System.out.println("12. Desvincular a una persona de un inmueble");
+            System.out.println(" -  1. Añadir local comercial");
+            System.out.println(" -  2. Añadir oficina");
+            System.out.println(" -  3. Añadir piso");
+            System.out.println(" -  4. Añadir edificio");
+            System.out.println(" -  5. Añadir persona");
+            System.out.println(" -  6. Eliminar una oficina");
+            System.out.println(" -  7. Eliminar un piso");
+            System.out.println(" -  8. Eliminar un edificio");
+            System.out.println(" -  9. Eliminar un local comercial");
+            System.out.println(" - 10. Mostrar inventario completo de inmuebles");
 
             Scanner entrada = new Scanner(System.in);
-            int opcion = 0;
+            int opcion;
             opcion = entrada.nextInt();
 
             switch (opcion) {
@@ -46,7 +45,7 @@ public class Parcial_2 {
                     boolean via = entrada.nextBoolean();
                     System.out.println("Ingrese una descripción breve del local: ");
                     String desc = entrada.next();
-                    f.agregarLocalComercial(desc, via, barrioLocal, estratoLocal, valorArriendoLocal, areaConsLocal, dispLocal);
+                    f.addLocalComercial(desc, via, barrioLocal, estratoLocal, valorArriendoLocal, areaConsLocal, dispLocal);
                     break;
 
                 case 2:
@@ -62,7 +61,7 @@ public class Parcial_2 {
                     boolean dispOfi = entrada.nextBoolean();
                     System.out.println("Ingrese el tipo de Oficina: ");
                     String tipoOficina = entrada.next();
-                    f.agregarOficina(tipoOficina, nombreBarrioOfi, estratoOfi, valorArriendoOfi, areaConsOfi, dispOfi);
+                    f.addOficina(tipoOficina, nombreBarrioOfi, estratoOfi, valorArriendoOfi, areaConsOfi, dispOfi);
                     break;
 
                 case 3:
@@ -80,7 +79,7 @@ public class Parcial_2 {
                     int numOficinas = entrada.nextInt();
                     System.out.println("Ingrese el área total del piso: ");
                     double aTotal = entrada.nextDouble();
-                    f.agregarPiso(numOficinas, aTotal, nombreBarrioPiso, estratoPiso, valorArriendoPiso, areaConsPiso, dispPiso);
+                    f.addPiso(numOficinas, aTotal, nombreBarrioPiso, estratoPiso, valorArriendoPiso, areaConsPiso, dispPiso);
                     break;
 
                 case 4:
@@ -96,15 +95,30 @@ public class Parcial_2 {
                     boolean dispE = entrada.nextBoolean();
                     System.out.println("Ingrese información del Propietario: ");
                     String prop = entrada.next();
-                    f.agregarEdificio(prop, nombreBarrioE, estratoE, valorArriendoE, areaConsE, dispE);
+                    f.addEdificio(prop, nombreBarrioE, estratoE, valorArriendoE, areaConsE, dispE);
                     break;
 
                 case 5:
-                    System.out.println("Ingrese el número de registro del local que desea eliminar. En caso de que no lo recuerde, consulte el inventario"
-                            + "para evitar posibles inconvenientes");
-                    int kLocal = entrada.nextInt();
-                    f.eliminarLocal(kLocal);
+                    System.out.println("Ingrese el nombre de la persona: ");
+                    String nombre = entrada.next();
+                    System.out.println("Ingrese el documento de identidad: ");
+                    int documento = entrada.nextInt();
+                    System.out.println("Ingrese la edad de la persona: ");
+                    int edad = entrada.nextInt();
+                    System.out.println("Ingrese el sexo de la persona: ");
+                    String sexo = entrada.next();
+                    System.out.println("Si la persona cuenta con una nómina, digite true, en caso contrario, dijite false");
+                    boolean nomina = entrada.nextBoolean();
+                    System.out.println("Si la persona cuenta con un aval bancario, digite true, en caso contrario, dijite false");
+                    boolean avalBancario = entrada.nextBoolean();
+                    System.out.println("Si la persona cuenta con un contrato de trabajo, digite true, en caso contrario, dijite false");
+                    boolean contratoTrabajo = entrada.nextBoolean();
+                    System.out.println("Si la persona cuenta con un aval de una persona que cumpla con los requisitos, digite true, en caso contrario, dijite false");
+                    boolean avalPersona = entrada.nextBoolean();
+                    Persona a = new Persona(nombre, documento, edad, sexo, nomina, avalBancario, contratoTrabajo, avalPersona);
+                    f.addCliente(a);
                     break;
+                    
 
                 case 6:
                     System.out.println("Ingrese el número de registro de la oficina que desea eliminar. En caso de que no lo recuerde, consulte el inventario"
@@ -128,31 +142,20 @@ public class Parcial_2 {
                     break;
 
                 case 9:
-                    f.consultarInventarios();
+                   System.out.println("Ingrese el número de registro del local que desea eliminar. En caso de que no lo recuerde, consulte el inventario"
+                            + "para evitar posibles inconvenientes");
+                    int kLocal = entrada.nextInt();
+                    f.eliminarLocal(kLocal);
                     break;
 
                 case 10:
-                    System.out.println("Ingrese el nombre de la persona: ");
-                    String nombre = entrada.next();
-                    System.out.println("Ingrese el documento de identidad: ");
-                    int documento = entrada.nextInt();
-                    System.out.println("Ingrese la edad de la persona: ");
-                    int edad = entrada.nextInt();
-                    System.out.println("Ingrese el sexo de la persona: ");
-                    String sexo = entrada.next();
-                    System.out.println("Si la persona cuenta con una nómina, digite true, en caso contrario, dijite false");
-                    boolean nomina = entrada.nextBoolean();
-                    System.out.println("Si la persona cuenta con un aval bancario, digite true, en caso contrario, dijite false");
-                    boolean avalBancario = entrada.nextBoolean();
-                    System.out.println("Si la persona cuenta con un contrato de trabajo, digite true, en caso contrario, dijite false");
-                    boolean contratoTrabajo = entrada.nextBoolean();
-                    System.out.println("Si la persona cuenta con un aval de una persona que cumpla con los requisitos, digite true, en caso contrario, dijite false");
-                    boolean avalPersona = entrada.nextBoolean();
-                    Persona a = new Persona(nombre, documento, edad, sexo, nomina, avalBancario, contratoTrabajo, avalPersona);
-                    f.agregarCliente(a);
+                    f.consultarInventarios();
                     break;
-
-                case 11:
+     
+                default:
+                    System.out.println("Error");
+                    JOptionPane.showMessageDialog(null, "No Es Permitida Esa Opcion", "Error",JOptionPane.ERROR_MESSAGE);
+                    break;
 
             }
 

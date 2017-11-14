@@ -1,33 +1,32 @@
 package Datos;
 
 public abstract class Inmueble {
-    protected String nombreBarrio;
+    protected String Nombre_Barrio;
     protected int estrato;
-    protected double valorArriendo;
-    protected double areaConstruida;
+    protected double Valor_Arriendo;
+    protected double Area_Construida;
     protected boolean disponible;
-    protected Persona arrendatario;
+    protected Persona Inquilino;
 
     public Inmueble(String nombreBarrio, int estrato, double valorArriendo, double areaConstruida, boolean disponible) {
-        this.nombreBarrio = nombreBarrio;
+        this.Nombre_Barrio = nombreBarrio;
         this.estrato = estrato;
-        this.valorArriendo = valorArriendo;
-        this.areaConstruida = areaConstruida;
+        this.Valor_Arriendo = valorArriendo;
+        this.Area_Construida = areaConstruida;
         this.disponible = disponible;
     }
     
     public abstract String darInformacion();
     
-    public void agregarCliente(Persona persona){
-        if(persona.evaluarPersona() == true){
-            this.arrendatario = persona;
+    public void addCliente(Persona persona){
+        if(persona.Verificar_Persona() == true){
+            this.Inquilino = persona;
         } else {
-            System.out.println("Esta persona no cumple con los requisitos necesarios para "
-                    + "alquilar uno de los Inmuebles");
+            System.out.println("Esta persona no es apta segun requisitos para alquilar los Inmuebles");
         }
     }
     
     public void eliminarCliente(){
-        this.arrendatario = null;
+        this.Inquilino = null;
     }
 }

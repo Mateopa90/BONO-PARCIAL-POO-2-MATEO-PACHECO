@@ -1,22 +1,22 @@
 package Datos;
 
-public class LocalComercial extends Local{
+public class Local_Comercial extends Local{
     
     private String descripcion;
     private boolean viaPrincipal;
 
-    public LocalComercial(String descripcion, boolean viaPrincipal, String nombreBarrio, int estrato, double valorArriendo, double areaConstruida, boolean disponible) {
+    public Local_Comercial(String descripcion, boolean viaPrincipal, String nombreBarrio, int estrato, double valorArriendo, double areaConstruida, boolean disponible) {
         super(nombreBarrio, estrato, valorArriendo, areaConstruida, disponible);
         this.descripcion = descripcion;
         this.viaPrincipal = viaPrincipal;
     }
-    
+
     @Override
     public String darInformacion(){
-        String info = "Nombre del Barrio: " + this.nombreBarrio + "\n" + 
+        String info = "Nombre del Barrio: " + this.Nombre_Barrio + "\n" + 
                 "Estrato: " + this.estrato + "\n" + 
-                "Valor Arriendo: " + this.valorArriendo + "\n" + 
-                "Área construida: " + this.areaConstruida + "\n" + 
+                "Valor Arriendo: " + this.Valor_Arriendo + "\n" + 
+                "Área construida: " + this.Area_Construida + "\n" + 
                 "Disponible: " + this.disponible + "\n" + 
                 "Se encuentra en vía Principal: " + this.viaPrincipal + "\n" + 
                 "Descripción: " + this.descripcion;
@@ -32,7 +32,7 @@ public class LocalComercial extends Local{
     }
 
     public void setNombreBarrio(String nombreBarrio) {
-        this.nombreBarrio = nombreBarrio;
+        this.Nombre_Barrio = nombreBarrio;
     }
 
     public void setEstrato(int estrato) {
@@ -40,11 +40,11 @@ public class LocalComercial extends Local{
     }
 
     public void setValorArriendo(double valorArriendo) {
-        this.valorArriendo = valorArriendo;
+        this.Valor_Arriendo = valorArriendo;
     }
 
     public void setAreaConstruida(double areaConstruida) {
-        this.areaConstruida = areaConstruida;
+        this.Area_Construida = areaConstruida;
     }
 
     public void setDisponible(boolean disponible) {
@@ -60,7 +60,7 @@ public class LocalComercial extends Local{
     }
 
     public String getNombreBarrio() {
-        return nombreBarrio;
+        return Nombre_Barrio;
     }
 
     public int getEstrato() {
@@ -68,11 +68,11 @@ public class LocalComercial extends Local{
     }
 
     public double getValorArriendo() {
-        return valorArriendo;
+        return Valor_Arriendo;
     }
 
     public double getAreaConstruida() {
-        return areaConstruida;
+        return Area_Construida;
     }
 
     public boolean isDisponible() {
@@ -80,7 +80,7 @@ public class LocalComercial extends Local{
     }
 
     public Persona getArrendatario() {
-        return arrendatario;
+        return Inquilino;
     }
     
     

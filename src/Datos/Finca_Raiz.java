@@ -1,56 +1,64 @@
 package Datos;
 
-import java.util.ArrayList;
-import java.util.TreeMap;
+import java.util.*;
 
-public class FincaRaiz {
-
-    private TreeMap<Integer, LocalComercial> inventarioLocales;
-    private TreeMap<Integer, Oficina> inventarioOficinas;
-    private TreeMap<Integer, Piso> inventarioPisos;
-    private TreeMap<Integer, Edificio> inventarioEdificios;
-    private TreeMap<Integer, Persona> clientes;
+public class Finca_Raiz {
+    
     private int numLoc;
     private int numOfi;
     private int numPiso;
     private int numEdi;
+    public TreeMap<Integer, Local_Comercial> inventarioLocales;
+    public TreeMap<Integer, Oficina> inventarioOficinas;
+    public TreeMap<Integer, Piso> inventarioPisos;
+    public TreeMap<Integer, Edificio> inventarioEdificios;
+    private TreeMap<Integer, Persona> clientes;
 
-    public FincaRaiz() {
-        this.inventarioLocales = new TreeMap<>();
-        this.inventarioOficinas = new TreeMap<>();
-        this.inventarioPisos = new TreeMap<>();
-        this.inventarioEdificios = new TreeMap<>();
+    public Finca_Raiz() {
+        
         this.numLoc = 1;
         this.numOfi = 1;
         this.numPiso = 1;
         this.numEdi = 1;
+        this.inventarioLocales = new TreeMap<>();
+        this.inventarioOficinas = new TreeMap<>();
+        this.inventarioPisos = new TreeMap<>();
+        this.inventarioEdificios = new TreeMap<>();
+        
     }
 
-    public void agregarLocalComercial(String descripcion, boolean viaPrincipal, String nombreBarrio, int estrato, double valorArriendo, double areaConstruida, boolean disponible) {
-        LocalComercial l = new LocalComercial(descripcion, viaPrincipal, nombreBarrio, estrato, valorArriendo, areaConstruida, disponible);
+    public void addLocalComercial(String descripcion, boolean viaPrincipal, String nombreBarrio, 
+            int estrato, double valorArriendo, double areaConstruida, boolean disponible) {
+        Local_Comercial l = new Local_Comercial(descripcion, viaPrincipal, nombreBarrio, 
+                estrato, valorArriendo, areaConstruida, disponible);
         inventarioLocales.put(this.numLoc, l);
         this.numLoc++;
     }
 
-    public void agregarOficina(String tipoOficina, String nombreBarrio, int estrato, double valorArriendo, double areaConstruida, boolean disponible) {
+    public void addOficina(String tipoOficina, String nombreBarrio, int estrato, double valorArriendo, 
+            double areaConstruida, boolean disponible) {
         Oficina o = new Oficina(tipoOficina, nombreBarrio, estrato, valorArriendo, areaConstruida, disponible);
         inventarioOficinas.put(this.numOfi, o);
         this.numOfi++;
     }
 
-    public void agregarPiso(int numeroOficinas, double area, String nombreBarrio, int estrato, double valorArriendo, double areaConstruida, boolean disponible) {
-        Piso p = new Piso(numeroOficinas, area, nombreBarrio, estrato, valorArriendo, areaConstruida, disponible);
+    public void addPiso(int numeroOficinas, double area, String nombreBarrio, int estrato, 
+            double valorArriendo, double areaConstruida, boolean disponible) {
+        Piso p = new Piso(numeroOficinas, area, nombreBarrio, estrato, valorArriendo, 
+                areaConstruida, disponible);
         inventarioPisos.put(this.numPiso, p);
         this.numPiso++;
     }
 
-    public void agregarEdificio(String propietario, String nombreBarrio, int estrato, double valorArriendo, double areaConstruida, boolean disponible) {
-        Edificio e = new Edificio(propietario, nombreBarrio, estrato, valorArriendo, areaConstruida, disponible);
+    public void addEdificio(String propietario, String nombreBarrio, int estrato, double valorArriendo, 
+            double areaConstruida, boolean disponible) {
+        Edificio e = new Edificio(propietario, nombreBarrio, estrato, valorArriendo, 
+                areaConstruida, disponible);
         inventarioEdificios.put(this.numEdi, e);
         this.numEdi++;
     }
     
-    public void agregarCliente(Persona persona){
+    public void addCliente(Persona persona){
         clientes.put(persona.getDocumento(), persona);
     }
 

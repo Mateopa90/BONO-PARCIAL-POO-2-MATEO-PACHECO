@@ -10,10 +10,10 @@ public class Oficina extends Local {
     
     @Override
     public String darInformacion(){
-        String info = "Nombre del Barrio: " + this.nombreBarrio + "\n" + 
+        String info = "Nombre del Barrio: " + this.Nombre_Barrio + "\n" + 
                 "Estrato: " + this.estrato + "\n" + 
-                "Valor Arriendo: " + this.valorArriendo + "\n" + 
-                "Área construida: " + this.areaConstruida + "\n" + 
+                "Valor Arriendo: " + this.Valor_Arriendo + "\n" + 
+                "Área construida: " + this.Area_Construida + "\n" + 
                 "Disponible: " + this.disponible + "\n" + 
                 "Tipo de Oficina: " + this.tipoOficina;
         return info;
@@ -24,7 +24,7 @@ public class Oficina extends Local {
     }
 
     public void setNombreBarrio(String nombreBarrio) {
-        this.nombreBarrio = nombreBarrio;
+        this.Nombre_Barrio = nombreBarrio;
     }
 
     public void setEstrato(int estrato) {
@@ -32,11 +32,11 @@ public class Oficina extends Local {
     }
 
     public void setValorArriendo(double valorArriendo) {
-        this.valorArriendo = valorArriendo;
+        this.Valor_Arriendo = valorArriendo;
     }
 
     public void setAreaConstruida(double areaConstruida) {
-        this.areaConstruida = areaConstruida;
+        this.Area_Construida = areaConstruida;
     }
 
     public void setDisponible(boolean disponible) {
@@ -48,7 +48,7 @@ public class Oficina extends Local {
     }
 
     public String getNombreBarrio() {
-        return nombreBarrio;
+        return Nombre_Barrio;
     }
 
     public int getEstrato() {
@@ -56,11 +56,11 @@ public class Oficina extends Local {
     }
 
     public double getValorArriendo() {
-        return valorArriendo;
+        return Valor_Arriendo;
     }
 
     public double getAreaConstruida() {
-        return areaConstruida;
+        return Area_Construida;
     }
 
     public boolean isDisponible() {
@@ -68,6 +68,6 @@ public class Oficina extends Local {
     }
 
     public Persona getArrendatario() {
-        return arrendatario;
+        return Inquilino;
     }
 }

@@ -1,0 +1,21 @@
+
+PARCIAL 2 PROGRAMACION ORIENTADA A OBJETOS
+MATEO PACHECO FANDIÑO
+
+PUNTO 1.
+
+ A(...)
+
+1) RTA: VERDADERO
+2) RTA: FALSO, los métodos estáticos no pueden ser abstractos.
+3) RTA: FALSO.
+4) RTA: Verdadero.
+5) RTA: VERDADERO, se simula una herencia utilizando la palabra implements. Una clase solo puede heredar
+ de una clase, pero puede implementar varias interfaces
+
+ B(...)
+
+1) FALSO
+2) FALSO
+3) VERDADERO
+

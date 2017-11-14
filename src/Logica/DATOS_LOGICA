@@ -1,0 +1,17 @@
+
+DATOS_LOGICA, se reproduce el metodo cargar para abrir el archivo de ejemplo "Inventario.txt", 
+si no lo crea; se usó como delimitador " , ".
+
+Pisos: 
+Piso,id,está arrendado,NombreBarrio,tAreaConstruida,Estrato,ValorArriendo,area,numOficinas,
+se le agregan todas las oficinas que estén asignadas al piso en el siguiente formato
+
+Local Comercial:
+LocalComercial,id,está arrendado,NombreBarrio,AreaConstruida,Estrato,ValorArriendo,descripcion,viaPrincipal,
+
+Oficina:
+Oficina,id,está arrendado,NombreBarrio,tAreaConstruida,Estrato,ValorArriendo, tipo,
+
+Edificios:
+Edificio,id,está arrendado,NombreBarrio,tAreaConstruida,Estrato,ValorArriendo,propietario,
+se le agregan todos los pisos que estén asignados al edificio en el siguiente formato

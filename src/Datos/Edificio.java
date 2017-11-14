@@ -4,97 +4,72 @@ import java.util.ArrayList;
 
 public class Edificio extends Inmueble {
 
-    private String propietario;
-    private ArrayList<Oficina> oficinas;
-    private ArrayList<LocalComercial> localesComerciales;
+    private String Propietario;
+    private ArrayList<Oficina> Oficinas;
+    private ArrayList<Local_Comercial> Locales_Comerciales;
     private ArrayList<Piso> pisos;
 
-    public Edificio(String propietario, String nombreBarrio, int estrato, double valorArriendo, double areaConstruida, boolean disponible) {
+    public Edificio(String propietario, String nombreBarrio, int estrato, 
+            double valorArriendo, double areaConstruida, boolean disponible) {
         super(nombreBarrio, estrato, valorArriendo, areaConstruida, disponible);
-        this.propietario = propietario;
-        this.oficinas = new ArrayList<>();
-        this.localesComerciales = new ArrayList<>();
+        this.Propietario = propietario;
+        this.Oficinas = new ArrayList<>();
+        this.Locales_Comerciales = new ArrayList<>();
         this.pisos = new ArrayList<>();
     }   
 
-    public void agregarLocalesComerciales(String descripcion, boolean viaPrincipal, String nombreBarrio, int estrato, double valorArriendo, double areaConstruida, boolean disponible){
-        LocalComercial l = new LocalComercial(descripcion, viaPrincipal, nombreBarrio, estrato, valorArriendo, areaConstruida, disponible);
-        localesComerciales.add(l);
+    public void addLocales_Comerciales(String descripcion, boolean viaPrincipal, String nombreBarrio, 
+            int estrato, double valorArriendo, double areaConstruida, boolean disponible){
+        
+        Local_Comercial l = new Local_Comercial( descripcion, viaPrincipal, nombreBarrio, 
+         estrato, valorArriendo, areaConstruida, disponible);
+        Locales_Comerciales.add(l);
     }
 
-    public void agregarOficinas(String tipoOficina, String nombreBarrio, int estrato, double valorArriendo, double areaConstruida, boolean disponible) {
-        Oficina o = new Oficina(tipoOficina, nombreBarrio, estrato, valorArriendo, areaConstruida, disponible);
-        oficinas.add(o);
+    public void addOficinas(String tipoOficina, String nombreBarrio, int estrato, 
+            double valorArriendo, double areaConstruida, boolean disponible) {
+        
+        Oficina o = new Oficina( tipoOficina, nombreBarrio, estrato,  valorArriendo, areaConstruida, disponible);
+        Oficinas.add(o);
     }
 
-    public void agregarPiso(int numeroOficinas, double area, String nombreBarrio, int estrato, double valorArriendo, double areaConstruida, boolean disponible) {
-        Piso p = new Piso(numeroOficinas, area, nombreBarrio, estrato, valorArriendo, areaConstruida, disponible);
+    public void addPiso(int numeroOficinas, double area, String nombreBarrio, int estrato, 
+            double valorArriendo, double areaConstruida, boolean disponible) {
+        
+        Piso p = new Piso(numeroOficinas, area, nombreBarrio, estrato, 
+                valorArriendo, areaConstruida, disponible);
         pisos.add(p);
     }
-
-    public String getPropietario() {
-        return propietario;
-    }
-
-    public ArrayList<Oficina> getOficinas() {
-        return oficinas;
-    }
-
-    public ArrayList<LocalComercial> getLocalesComerciales() {
-        return localesComerciales;
-    }
-
-    public ArrayList<Piso> getPisos() {
-        return pisos;
-    }
-
-    public String getNombreBarrio() {
-        return nombreBarrio;
-    }
-
-    public int getEstrato() {
-        return estrato;
-    }
-
-    public double getValorArriendo() {
-        return valorArriendo;
-    }
-
-    public double getAreaConstruida() {
-        return areaConstruida;
-    }
-
-    public boolean isDisponible() {
-        return disponible;
-    }
-
-    public Persona getArrendatario() {
-        return arrendatario;
+    
+    public String noArrendados() {
+        String Pisos_Arrendados = "";
+        String Locales_Arrendados = "";
+        for (Piso piso : pisos) {
+            if (piso.isDisponible() == false) {
+                Pisos_Arrendados += piso.darInformacion();
+                Pisos_Arrendados += '\n';
+            }
+        }
+        for (Local_Comercial local : Locales_Comerciales) {
+            if (local.isDisponible() == false) {
+                Locales_Arrendados += local.darInformacion();
+                Locales_Arrendados += '\n';
+            }
+        }
+        return "Pisos No Arrendados: " + '\n' + Pisos_Arrendados + '\n' 
+                + "Locales No Arrendados: " + '\n' + Locales_Arrendados;
     }
     
-    
-
-    @Override
-    public String darInformacion() {
-        String info = "Nombre del Barrio: " + this.nombreBarrio + "\n"
-                + "Estrato: " + this.estrato + "\n"
-                + "Valor Arriendo: " + this.valorArriendo + "\n"
-                + "Área construida: " + this.areaConstruida + "\n"
-                + "Disponible: " + this.disponible + "\n"
-                + "Info. del Propietario: " + this.propietario;
-        return info;
-    }
-
     public void setPropietario(String propietario) {
-        this.propietario = propietario;
+        this.Propietario = propietario;
     }
 
     public void setOficinas(ArrayList<Oficina> oficinas) {
-        this.oficinas = oficinas;
+        this.Oficinas = oficinas;
     }
 
-    public void setLocalesComerciales(ArrayList<LocalComercial> localesComerciales) {
-        this.localesComerciales = localesComerciales;
+    public void setLocalesComerciales(ArrayList<Local_Comercial> localesComerciales) {
+        this.Locales_Comerciales = localesComerciales;
     }
 
     public void setPisos(ArrayList<Piso> pisos) {
@@ -102,7 +77,7 @@ public class Edificio extends Inmueble {
     }
 
     public void setNombreBarrio(String nombreBarrio) {
-        this.nombreBarrio = nombreBarrio;
+        this.Nombre_Barrio = nombreBarrio;
     }
 
     public void setEstrato(int estrato) {
@@ -110,15 +85,65 @@ public class Edificio extends Inmueble {
     }
 
     public void setValorArriendo(double valorArriendo) {
-        this.valorArriendo = valorArriendo;
+        this.Valor_Arriendo = valorArriendo;
     }
 
     public void setAreaConstruida(double areaConstruida) {
-        this.areaConstruida = areaConstruida;
+        this.Area_Construida = areaConstruida;
     }
 
     public void setDisponible(boolean disponible) {
         this.disponible = disponible;
     }
 
+    public String getPropietario() {
+        return Propietario;
+    }
+
+    public ArrayList<Oficina> getOficinas() {
+        return Oficinas;
+    }
+
+    public ArrayList<Local_Comercial> getLocalesComerciales() {
+        return Locales_Comerciales;
+    }
+
+    public ArrayList<Piso> getPisos() {
+        return pisos;
+    }
+
+    public String getNombreBarrio() {
+        return Nombre_Barrio;
+    }
+
+    public int getEstrato() {
+        return estrato;
+    }
+
+    public double getValorArriendo() {
+        return Valor_Arriendo;
+    }
+
+    public double getAreaConstruida() {
+        return Area_Construida;
+    }
+
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    public Persona getArrendatario() {
+        return Inquilino;
+    } 
+
+    @Override
+    public String darInformacion() {
+        String info = "Nombre del Barrio: " + this.Nombre_Barrio + "\n"
+                + "Estrato: " + this.estrato + "\n"
+                + "Valor Arriendo: " + this.Valor_Arriendo + "\n"
+                + "Área construida: " + this.Area_Construida + "\n"
+                + "Disponible: " + this.disponible + "\n"
+                + "Info. del Propietario: " + this.Propietario;
+        return info;
+    }   
 }
