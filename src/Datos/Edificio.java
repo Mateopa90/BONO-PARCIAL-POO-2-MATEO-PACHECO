@@ -20,7 +20,6 @@ public class Edificio extends Inmueble {
 
     public void addLocales_Comerciales(String descripcion, boolean viaPrincipal, String nombreBarrio, 
             int estrato, double valorArriendo, double areaConstruida, boolean disponible){
-        
         Local_Comercial l = new Local_Comercial( descripcion, viaPrincipal, nombreBarrio, 
          estrato, valorArriendo, areaConstruida, disponible);
         Locales_Comerciales.add(l);
